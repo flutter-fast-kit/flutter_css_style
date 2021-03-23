@@ -6,16 +6,15 @@ class StaticStyle extends StatefulWidget {
   final bool inheritFromParent;
   final Widget child;
   static StaticStyleState of(BuildContext context) {
-    final StyleInherited style =
-        context.dependOnInheritedWidgetOfExactType<StyleInherited>();
-    return style?.data;
+    final StyleInherited style = context.dependOnInheritedWidgetOfExactType<StyleInherited>()!;
+    return style.data;
   }
 
   const StaticStyle({
-    Key key,
-    @required this.data,
+    Key? key,
+    required this.data,
     this.inheritFromParent = true,
-    @required this.child,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -23,7 +22,7 @@ class StaticStyle extends StatefulWidget {
 }
 
 class StaticStyleState extends State<StaticStyle> {
-  StyleData style;
+  late StyleData style;
   @override
   void didUpdateWidget(StaticStyle oldWidget) {
     super.didUpdateWidget(oldWidget);

@@ -3,8 +3,7 @@ import 'package:flutter/widgets.dart';
 class StyleData {
   final Map<String, dynamic> _data;
 
-  StyleData(Map<String, dynamic> data)
-      : this._data = _StyleHandler.handleNewData(data: data);
+  StyleData(Map<String, dynamic> data) : this._data = _StyleHandler.handleNewData(data: data);
 
   factory StyleData.empty() {
     return StyleData({});
@@ -28,7 +27,7 @@ class StyleData {
 }
 
 class _StyleHandler {
-  static Map<String, dynamic> handleNewData({Map data}) {
+  static Map<String, dynamic> handleNewData({required Map data}) {
     return data.map((key, value) {
       var newValue = value;
       newValue = _ValueUtils.convertToColorFromString(value) ?? newValue;
@@ -36,7 +35,7 @@ class _StyleHandler {
     });
   }
 
-  static handleValue({StyleData style, dynamic value}) {
+  static handleValue({required StyleData style, dynamic value}) {
     if (value is String) {
       return style.get(value) ?? value;
     } else if (value is dynamic Function(StyleData)) {
@@ -48,7 +47,7 @@ class _StyleHandler {
 }
 
 class _ValueUtils {
-  static Color convertToColorFromString(dynamic value) {
+  static Color? convertToColorFromString(dynamic value) {
     if (value is String && value.length == 7 && value[0] == '#') {
       final intValue = int.parse(value.substring(1), radix: 16);
       return Color(intValue).withOpacity(1.0);
