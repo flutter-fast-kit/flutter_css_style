@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_css_style/flutter_css_style.dart';
+part of flutter_css_style;
 
 class StaticStyle extends StatefulWidget {
   final StyleData data;

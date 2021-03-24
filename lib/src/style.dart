@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutter_css_style/flutter_css_style.dart';
+part of flutter_css_style;
 
 abstract class StyleState<T extends StatefulWidget> extends State<T> {
   StyleData? style;

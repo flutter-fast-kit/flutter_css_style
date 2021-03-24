@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+part of flutter_css_style;
 
 class StyleData {
   final Map<String, dynamic> _data;
