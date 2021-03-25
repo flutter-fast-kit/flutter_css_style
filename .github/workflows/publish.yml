@@ -14,7 +14,7 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v2
       - name: "publish"
-      - uses: k-paxian/dart-package-publisher@v1.2
+        uses: k-paxian/dart-package-publisher@v1.2
         with:
           accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
           refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
