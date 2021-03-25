@@ -37,9 +37,9 @@ class StaticStyleState extends State<StaticStyle> {
   @override
   Widget build(BuildContext context) {
     if (widget.inheritFromParent) {
-      final parentData = StaticStyle.of(context);
-      if (parentData != null) {
-        this.style.inject(parentData.style);
+      final StyleInherited? style = context.dependOnInheritedWidgetOfExactType<StyleInherited>();
+      if (style != null) {
+        this.style.inject(style.data.style);
       }
     }
     return StyleInherited(

@@ -1,6 +1,6 @@
 name: flutter_css_style
 description: CSS-variables like Flutter theming.
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/flutter-fast-kit/flutter_css_style
 
 environment:
